@@ -8,11 +8,15 @@ int main() {
     people["Іван"] = 30;
     people["Андрій"] = 27;
 
+    std::cout << "Список людей:" << std::endl;
     for (const auto& pair : people) {
         std::cout << pair.first << " — " << pair.second << " років" << std::endl;
     }
 
-    std::string name = "Іван";
+    std::string name;
+    std::cout << "\nВведіть ім'я для пошуку: ";
+    std::getline(std::cin, name);
+
     if (people.count(name)) {
         std::cout << name << " знайдено, вік: " << people[name] << std::endl;
     } else {
